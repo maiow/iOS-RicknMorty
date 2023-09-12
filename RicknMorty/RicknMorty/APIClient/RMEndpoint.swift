@@ -8,7 +8,8 @@
 import Foundation
 
 /// Represents unique Rick&Morty API endpoint
-@frozen enum RMEndpoint: String {
+/// Hashable - to use as a key in a dictionary for CacheManager; CaseIterable - to be able to loop through cases
+@frozen enum RMEndpoint: String, CaseIterable, Hashable {
     ///Endpoint to get character info
     case character // ="character"
     ///Endpoint to get episode info
