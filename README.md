@@ -8,5 +8,6 @@ It is a work in progress 🚧.
 - URLSession
 - Pagination
 - Images caching
-- Compositional layout (Character's Details screen)
+- Compositional layout (Character Detail & Episode Detail screens)
 - Delegate & Publisher-subscriber patterns
+- Batch requests with DispatchGroup (for characters in Episode Detail View)
