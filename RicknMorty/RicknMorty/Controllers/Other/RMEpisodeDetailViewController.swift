@@ -7,8 +7,8 @@
 
 import UIKit
 
-/// Controller to show info about single episode#Description#>
-final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate {
+/// Controller to show info about single episode
+final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate, RMEpisodeDetailViewDelegate {
     
     private let viewModel: RMEpisodeDetailViewViewModel
     
@@ -31,8 +31,8 @@ final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailView
         super.viewDidLoad()
         view.addSubview(detailView)
         addConstraints()
+        detailView.delegate = self
         title = "Episode"
-        
         navigationItem.rightBarButtonItem? = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
         
         viewModel.delegate = self
@@ -52,8 +52,19 @@ final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailView
     private func didTapShare() {
     }
     
+    //MARK: - ViewModel Delegate
+    
     func didLoadEpisodeDetails() {
         detailView.configure(with: viewModel)
         
+    }
+    
+    //MARK: - View Delegate
+    
+    func rmEpisodeDetailView(_ detailView: RMEpisodeDetailView, didSelect character: RMCharacter) {
+        let vc = RMCharacterDetailViewController(viewModel: .init(character: character))
+        vc.title = character.name
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

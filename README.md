@@ -11,3 +11,4 @@ It is a work in progress 🚧.
 - Compositional layout (Character Detail & Episode Detail screens)
 - Delegate & Publisher-subscriber patterns
 - Batch requests with DispatchGroup (for characters in Episode Detail View)
+- SwiftUI for Settings screen
