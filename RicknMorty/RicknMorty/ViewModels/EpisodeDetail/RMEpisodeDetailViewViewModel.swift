@@ -58,7 +58,7 @@ final class RMEpisodeDetailViewViewModel {
             case .failure:
                 break
             }
-        }
+        }   
     }
     
     //MARK: - Private

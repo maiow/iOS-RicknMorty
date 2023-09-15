@@ -11,10 +11,29 @@ enum RMSettingsOption: CaseIterable {
     case rateApp
     case contactUs
     case terms
-    case privacyPolicy
     case apiReference
+    case supportApi
     case viewSeries
     case viewCode
+    
+    var targetUrl: URL? {
+        switch self {
+        case .rateApp:
+            return nil
+        case .contactUs:
+            return URL(string: "https://rickandmortyapi.com/about")
+        case .terms:
+            return URL(string: "https://www.rickandmortyapi.com/terms")
+        case .apiReference:
+            return URL(string: "https://rickandmortyapi.com/documentation")
+        case .supportApi:
+            return URL(string: "https://rickandmortyapi.com/support-us")
+        case .viewSeries:
+            return URL(string: "https://www.netflix.com/tr-en/title/80014749")
+        case .viewCode:
+            return URL(string: "https://github.com/maiow/iOS-RicknMorty")
+        }
+    }
     
     var displayTitle: String {
         switch self {
@@ -24,10 +43,10 @@ enum RMSettingsOption: CaseIterable {
             return "Contact Us"
         case .terms:
             return "Terms of Service"
-        case .privacyPolicy:
-            return "Privacy Policy"
         case .apiReference:
             return "API Reference"
+        case .supportApi:
+            return "Support API"
         case .viewSeries:
             return "View Video Series"
         case .viewCode:
@@ -43,10 +62,10 @@ enum RMSettingsOption: CaseIterable {
             return .systemRed
         case .terms:
             return .systemGreen
-        case .privacyPolicy:
-            return .systemOrange
         case .apiReference:
             return .systemPink
+        case .supportApi:
+            return .systemOrange
         case .viewSeries:
             return .systemBlue
         case .viewCode:
@@ -62,10 +81,10 @@ enum RMSettingsOption: CaseIterable {
             return UIImage(systemName: "paperplane")
         case .terms:
             return UIImage(systemName: "doc")
-        case .privacyPolicy:
-            return UIImage(systemName: "lock")
         case .apiReference:
             return UIImage(systemName: "link")
+        case .supportApi:
+            return UIImage(systemName: "dollarsign")
         case .viewSeries:
             return UIImage(systemName: "tv")
         case .viewCode:
