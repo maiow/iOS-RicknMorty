@@ -12,3 +12,4 @@ It is a work in progress 🚧.
 - Delegate & Publisher-subscriber patterns
 - Batch requests with DispatchGroup (for characters in Episode Detail View)
 - SwiftUI for Settings screen
+- Bottom sheet controller for search options
