@@ -15,6 +15,14 @@ final class RMSearchInputViewViewModel {
         case gender = "Gender"
         case locationType = "Location Type"
         
+        var queryArgument: String {
+            switch self {
+            case .status: "status"
+            case .gender: "gender"
+            case .locationType: "type"
+            }
+        }
+        
         var choices: [String] {
             switch self {
             case .status:

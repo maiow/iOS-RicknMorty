@@ -11,7 +11,7 @@ import UIKit
 final class RMLocationDetailViewController: UIViewController, RMLocationDetailViewViewModelDelegate, RMLocationDetailViewDelegate {
     
     private let viewModel: RMLocationDetailViewViewModel
-    
+    //TODO: - Check if ok without "RicknMorty."
     private let detailView = RicknMorty.RMLocationDetailView()
     
     //MARK: - Init
