@@ -1,9 +1,9 @@
 # iOS-RicknMorty
 Swift iOS App with The Rick and Morty API: https://rickandmortyapi.com/
 
-It is a work in progress 🚧.
+It is a work in progress 🚧, 90% readiness.
 
-- No Storyboard (code only)
+- No Storyboard, no xib, code only
 - MVVM
 - URLSession
 - Pagination

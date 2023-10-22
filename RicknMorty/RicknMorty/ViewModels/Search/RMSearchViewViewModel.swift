@@ -21,6 +21,8 @@ final class RMSearchViewViewModel {
     
     private var searchResultsHandler: ((RMSearchResultViewModel) -> Void)?
     
+    private var noResultsHandler: (() -> Void)?
+    
     //MARK: - Init
     
     init(config: RMSearchViewController.Config) {
@@ -33,6 +35,12 @@ final class RMSearchViewViewModel {
         _ block: @escaping (RMSearchResultViewModel) -> Void
     ) {
         self.searchResultsHandler = block
+    }
+    
+    public func registerNoResultsHandler(
+        _ block: @escaping () -> Void
+    ) {
+        self.noResultsHandler = block
     }
     
     public func executeSearch() {
@@ -71,7 +79,7 @@ final class RMSearchViewViewModel {
             case .success(let model):
                 self?.processSearchResults(model: model)
             case .failure:
-                print("Failed to get search results")
+                self?.handleNoResults()
                 break
             }
         }
@@ -106,8 +114,12 @@ final class RMSearchViewViewModel {
             self.searchResultsHandler?(results)
         }
         else {
-            //Error: No results view
+            handleNoResults()
         }
+    }
+    
+    private func handleNoResults() {
+        noResultsHandler?()
     }
     
     public func set(query text: String) {
