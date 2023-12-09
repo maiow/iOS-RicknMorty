@@ -8,6 +8,7 @@
 import Foundation
 
 struct RMLocationTableViewCellViewModel: Hashable, Equatable {
+    
     private let location: RMLocation
     
     init(location: RMLocation) {
