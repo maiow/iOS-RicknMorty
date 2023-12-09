@@ -1,7 +1,8 @@
 # iOS-RicknMorty
 Swift iOS App with The Rick and Morty API: https://rickandmortyapi.com/
 
-It is a work in progress 🚧, 90% readiness.
+It is a **work in progress** 🚧.
+<br />![](https://geps.dev/progress/90?dangerColor=800000&warningColor=ff9900&successColor=006600)
 
 - No Storyboard, no xib, code only
 - MVVM
