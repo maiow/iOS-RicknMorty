@@ -397,8 +397,8 @@
 				2AD1D1392AB5E5DF001C7EDA /* RMSearchView.swift */,
 				2AD1D13D2AB5F94B001C7EDA /* RMNoSearchResultsView.swift */,
 				2AD1D1422AB5F9E8001C7EDA /* RMSearchInputView.swift */,
-				2A69985A2ADB198900010B9E /* RMSearchResultViewModel.swift */,
 				2A3958262AE5A973004B1C3B /* RMSearchResultsView.swift */,
+				2A69985A2ADB198900010B9E /* RMSearchResultViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
