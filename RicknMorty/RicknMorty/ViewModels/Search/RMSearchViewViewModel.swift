@@ -156,7 +156,15 @@ final class RMSearchViewViewModel {
         guard let searchModel = searchResultModel as? RMGetAllLocationsResponse else {
             return nil
         }
-        return searchModel.results[index]
+        //TODO: fix the bug for locations, characters and episodes
+        //index out of range if clicked on 20-27th location for Earth for example as results contains 20 values from 0 to 19
+            if index >= searchModel.results.count {
+                print("BUG is here as searchModel.results contain 20 values only")
+                return nil
+            } else {
+                return searchModel.results[index]
+            }
+                
     }
     
     public func characterSearchResult(at index: Int) -> RMCharacter? {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Interface to relay location vew events
 protocol RMLocationViewDelegate: AnyObject {
     func rmLocationView(_ locationView: RMLocationView, 
                         didSelect location: RMLocation)
@@ -91,6 +92,8 @@ final class RMLocationView: UIView {
     }
 }
 
+//MARK: - UITableViewDelegate
+
 extension RMLocationView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -100,6 +103,8 @@ extension RMLocationView: UITableViewDelegate {
         delegate?.rmLocationView(self, didSelect: locationModel)
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension RMLocationView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,6 +124,8 @@ extension RMLocationView: UITableViewDataSource {
         return cell
     }
 }
+
+//MARK: - UIScrollViewDelegate
 
 extension RMLocationView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
