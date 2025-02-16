@@ -1,3 +1,4 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/maiow/iOS-RicknMorty?logo=GitHub)
 # iOS-RicknMorty
 Swift iOS App with The Rick and Morty API: https://rickandmortyapi.com/
 
